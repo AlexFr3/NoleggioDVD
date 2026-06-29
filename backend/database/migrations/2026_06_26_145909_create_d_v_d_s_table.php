@@ -26,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('d_v_d_s');
+        Schema::dropIfExists('dvds');
     }
 };

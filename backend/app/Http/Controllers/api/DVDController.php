@@ -2,48 +2,54 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
+use App\Models\DVD;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DVDController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return DVD::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //singolo DVD
+    public function show(DVD $dvd)
+    {
+        return $dvd;
+    }
+
+    // nuovo DVD
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'titolo' => 'required|string',
+            'data_uscita' => 'required|date',
+            'categoria' => 'required|string',
+            'durata' => 'required|integer',
+            'quantita' => 'required|integer',
+        ]);
+
+        return DVD::create($validated);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function update(Request $request, DVD $dvd)
     {
-        //
+        $validated = $request->validate([
+            'titolo' => 'string',
+            'data_uscita' => 'date',
+            'categoria' => 'string',
+            'durata' => 'integer',
+            'quantita' => 'integer',
+        ]);
+
+        $dvd->update($validated);
+        return $dvd;
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(DVD $dvd)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $dvd->delete();
+        return response()->noContent();
     }
 }
