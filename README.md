@@ -22,3 +22,4 @@ cd ..
 
 ## Setup shortcuts
 npm install
+# npm run dev
