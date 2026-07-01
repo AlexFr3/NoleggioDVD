@@ -21,7 +21,13 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        return Cliente::create($request->all());
+        $validateData = $request->validate([
+            'nome' => 'required|string|max:255',
+            'cognome' => 'required|string|max:255',
+            'email' => 'required|email|unique:clientes,email',
+        ]);
+        $newClient = Cliente::create($validateData);
+        return response()->json($newClient, 201);
     }
 
     /**
@@ -29,7 +35,7 @@ class ClienteController extends Controller
      */
     public function show(string $id)
     {
-        return Cliente::find($id);
+        return Cliente::findOrFail($id);
     }
 
     /**
