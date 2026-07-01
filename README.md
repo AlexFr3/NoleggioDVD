@@ -8,9 +8,17 @@ Progetto full-stack:
 cd backend
 composer install
 cp .env.example .env
-php artisan serve
+php artisan key:generate
+# Crea le tabelle vuote:
+php artisan migrate 
+# OPPURE, per creare le tabelle e popolarle con i DVD di esempio:
+# php artisan migrate --seed
+cd ..
 
 ## Setup frontend
 cd frontend
 npm install
-npm run dev
+cd ..
+
+## Setup shortcuts
+npm install
