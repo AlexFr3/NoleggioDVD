@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { clientiAPI, dvdAPI, noleggioAPI } from '../api/api';
+import './css/RentalForm.css';
 
 function RentalForm({ onRentalCreated }) {
   const [clienti, setClienti] = useState([]);
@@ -79,7 +80,7 @@ function RentalForm({ onRentalCreated }) {
 
   return (
     <div className="rental-form">
-      <h2>🎬 Registra Noleggio</h2>
+      <h2>Registra Noleggio</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Cliente:</label>

@@ -1,0 +1,133 @@
+.rental-form {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: var(--card-color, #ffffff);
+  box-shadow: var(--shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
+  margin-bottom: 20px;
+}
+
+.rental-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.rental-form form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #a39c97;
+  box-shadow: 0 0 0 2px rgba(213, 206, 201, 0.4);
+}
+
+.form-group small {
+  margin-top: 6px;
+  margin-left: 4px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #666;
+}
+
+.rental-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #d5cec9;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+  width: 100%;
+}
+
+.rental-form button:hover:not(:disabled) {
+  background-color: #c4beb9;
+}
+
+.rental-form button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.rental-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rental-form .success,
+.rental-form .error {
+  text-align: center;
+  font-weight: 600;
+  margin: 15px auto 0 auto;
+  padding: 10px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.rental-form .success {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.rental-form .error {
+  color: #d32f2f;
+  background-color: #ffebee;
+}
+
+@media (min-width: 768px) {
+  .rental-form form,
+  .rental-form .error,
+  .rental-form .success {
+    max-width: 500px;
+  }
+
+  .form-group label {
+    font-size: 18px;
+  }
+}
