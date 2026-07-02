@@ -37,9 +37,9 @@ npm install
 cd ..
 ```
 
-## Setup shortcuts
+## Setup shortcuts to start the project
 
 ```bash
 npm install
-# npm run dev
+npm run dev
 ```
