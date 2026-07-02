@@ -8,6 +8,9 @@
   background-color: var(--card-color);
   box-shadow: var(--shadow);
 }
+h2 {
+  margin-bottom: 10px;
+}
 table {
     width: 100%;
   border-collapse: collapse;
