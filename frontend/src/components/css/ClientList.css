@@ -1,4 +1,4 @@
-.dvd-list {
+.client-list {
   padding-top: 10px;
   padding-bottom: 2px;
   width: 100%;
@@ -8,8 +8,8 @@
   background-color: var(--card-color);
   box-shadow: var(--shadow);
 }
-
 table {
+    width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   border-radius: 4px;
@@ -31,16 +31,6 @@ td {
 tr:last-child td{
   border-bottom: none;
 }
-.available {
-    color: green;
-    font-weight: bold;
-}
-
-.unavailable {
-    color: red;
-    font-weight: bold;
-}
-
 @media (min-width: 768px) {
     table {
         width: 100%;
