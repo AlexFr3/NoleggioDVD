@@ -1,0 +1,135 @@
+.rental-list {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: var(--card-color, #ffffff);
+  box-shadow: var(--shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
+  margin-bottom: 20px;
+}
+
+.rental-list h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.rental-list .table-container {
+  width: 100%;
+}
+
+.rental-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rental-list table thead {
+  display: none;
+}
+
+/* STILE CARD SU MOBILE */
+.rental-list table tr {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background-color: #fafafa;
+}
+
+.rental-list table td {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  text-align: right;
+  word-break: break-word;
+}
+
+.rental-list table td:last-child {
+  border-bottom: none;
+}
+
+.rental-list table td::before {
+  content: attr(data-label);
+  font-weight: 600;
+  text-align: left;
+  color: #444;
+  margin-right: 15px;
+}
+
+.rental-list .return-btn {
+  padding: 10px 14px;
+  background-color: #d5cec9;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+
+.rental-list .return-btn:hover {
+  background-color: #c4beb9;
+}
+
+.rental-list .return-btn:active {
+  transform: scale(0.95);
+}
+
+.rental-list .status.returned {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  table {
+    margin: 0 auto;
+  }
+  .rental-list .table-container {
+    overflow-x: auto;
+  }
+  .rental-list table thead {
+    display: table-header-group;
+  }
+
+  .rental-list table tr {
+    display: table-row;
+    border: none;
+    background-color: transparent;
+  }
+
+  .rental-list table th,
+  .rental-list table td {
+    display: table-cell;
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .rental-list table td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .rental-list table th {
+    background-color: #d5cec9; 
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+  }
+
+  .rental-list table td::before {
+    display: none;
+  }
+}
