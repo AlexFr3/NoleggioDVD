@@ -6,7 +6,12 @@
   box-shadow: var(--shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
   margin-bottom: 20px;
 }
-
+p{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
 .rental-list h2 {
   text-align: center;
   margin-top: 0;
