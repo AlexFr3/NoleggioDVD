@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { clientiAPI } from '../api/api';
-
+import './css/ClientForm.css';
 function ClientForm({ onClientCreated }) {
   const [formData, setFormData] = useState({
     nome: '',
@@ -46,7 +46,7 @@ function ClientForm({ onClientCreated }) {
 
   return (
     <div className="client-form">
-      <h2>👤 Crea Nuovo Cliente</h2>
+      <h2>Crea Nuovo Cliente</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Nome:</label>

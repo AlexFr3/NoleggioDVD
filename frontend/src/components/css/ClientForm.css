@@ -1,0 +1,104 @@
+.client-form {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: var(--card-color);
+  box-shadow: var(--shadow);
+}
+h2 {
+  font-size: 24px;
+}
+.client-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.client-form form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input {
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #a39c97;
+  box-shadow: 0 0 0 2px rgba(213, 206, 201, 0.4);
+}
+
+.client-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #d5cec9;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+
+.client-form button:hover:not(:disabled) {
+  background-color: #c4beb9;
+}
+
+.client-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.client-form .success,
+.client-form .error {
+  text-align: center;
+  font-weight: 600;
+  margin: 15px auto 0 auto; 
+  padding: 10px;
+  border-radius: 20px;
+}
+.client-form .success {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.client-form .error {
+  color: #d32f2f;
+  background-color: #ffebee;
+}
+@media (min-width: 768px) {
+  .client-form form,
+  .client-form .error,
+  .client-form .success {
+    max-width: 500px;
+  }
+}
