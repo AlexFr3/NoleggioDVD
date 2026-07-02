@@ -59,7 +59,7 @@ function RentalForm({ onRentalCreated }) {
       if (onRentalCreated) {
         onRentalCreated();
       }
-
+      fetchData();
       setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       if (err.response?.data?.error) {
@@ -75,7 +75,7 @@ function RentalForm({ onRentalCreated }) {
 
   const getDvdAvailability = (dvdId) => {
     const dvd = dvds.find((d) => d.id === parseInt(dvdId));
-    return dvd ? dvd.quantita : 0;
+    return dvd ? dvd.copie_disponibili : 0;
   };
 
   return (
@@ -110,7 +110,7 @@ function RentalForm({ onRentalCreated }) {
             <option value="">Seleziona un DVD</option>
             {dvds?.map((dvd) => (
               <option key={dvd.id} value={dvd.id}>
-                {dvd.titolo} ({dvd.quantita} copie)
+                {dvd.titolo} ({dvd.copie_disponibili} copie)
               </option>
             ))}
           </select>

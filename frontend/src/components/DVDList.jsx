@@ -43,15 +43,14 @@ function DVDList() {
         </thead>
         <tbody>
           {dvds.map((dvd) => (
-            // Esempio modificato
           <tr key={dvd.id}>
             <td data-label="Titolo">{dvd.titolo}</td>
             <td data-label="Categoria">{dvd.categoria}</td>
             <td data-label="Durata">{dvd.durata} min</td>
             <td data-label="Uscita">{new Date(dvd.data_uscita).toLocaleDateString('it-IT')}</td>
             <td data-label="Disponibilità">
-              <span className={dvd.quantita > 0 ? 'available' : 'unavailable'}>
-                {dvd.quantita} copie
+              <span className={dvd.copie_disponibili > 0 ? 'available' : 'unavailable'}>
+                {dvd.copie_disponibili !== undefined ? dvd.copie_disponibili : dvd.quantita}
               </span>
             </td>
           </tr>

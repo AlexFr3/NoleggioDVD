@@ -10,7 +10,16 @@ class DVDController extends Controller
 {
     public function index()
     {
-        return DVD::all();
+        $dvds = DVD::all();
+        foreach ($dvds as $dvd) {
+        $noleggiatiAttivi = \App\Models\Noleggio::where('dvd_id', $dvd->id)
+            ->whereNull('restituzione_effettiva')
+            ->count();
+            
+        $dvd->copie_disponibili = $dvd->quantita - $noleggiatiAttivi;
+    }
+
+    return $dvds;
     }
 
     //singolo DVD
