@@ -1,0 +1,61 @@
+.dvd-list {
+  padding-top: 10px;
+  padding-bottom: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+  background-color: var(--card-color);
+  box-shadow: var(--shadow);
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 4px;
+}
+th {
+    background: #d5cec9;
+    font-weight: 600;
+    font-size: 15px;
+}
+th,
+td {
+  padding: 3px 3px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+tr:last-child td{
+  border-bottom: none;
+}
+
+
+
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: red;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        font-size: 16px;
+        padding: 14px 10px;
+    }
+
+    th {
+        font-size: 17px;
+    }
+} 

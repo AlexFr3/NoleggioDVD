@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { dvdAPI } from '../api/api';
+import './css/DVDList.css';
 
 function DVDList() {
   const [dvds, setDvds] = useState([]);
@@ -29,7 +30,7 @@ function DVDList() {
 
   return (
     <div className="dvd-list">
-      <h2>📀 Catalogo DVD</h2>
+      <h2>Catalogo DVD</h2>
       <table>
         <thead>
           <tr>
@@ -42,17 +43,18 @@ function DVDList() {
         </thead>
         <tbody>
           {dvds.map((dvd) => (
-            <tr key={dvd.id}>
-              <td>{dvd.titolo}</td>
-              <td>{dvd.categoria}</td>
-              <td>{dvd.durata}</td>
-              <td>{new Date(dvd.data_uscita).toLocaleDateString('it-IT')}</td>
-              <td>
-                <span className={dvd.quantita > 0 ? 'available' : 'unavailable'}>
-                  {dvd.quantita} copie
-                </span>
-              </td>
-            </tr>
+            // Esempio modificato
+          <tr key={dvd.id}>
+            <td data-label="Titolo">{dvd.titolo}</td>
+            <td data-label="Categoria">{dvd.categoria}</td>
+            <td data-label="Durata">{dvd.durata} min</td>
+            <td data-label="Uscita">{new Date(dvd.data_uscita).toLocaleDateString('it-IT')}</td>
+            <td data-label="Disponibilità">
+              <span className={dvd.quantita > 0 ? 'available' : 'unavailable'}>
+                {dvd.quantita} copie
+              </span>
+            </td>
+          </tr>
           ))}
         </tbody>
       </table>
